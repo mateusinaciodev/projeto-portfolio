@@ -56,4 +56,67 @@ nav#menu a:hover
 {
   background-color: var(--destaque-inverso);
   color: var(--destaque);
+} 
+
+main  
+{
+  display: grid;
+  grid-template-columns: auto 90vw auto;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+section#ficha
+{
+  background-color: var(--fundo-card);
+  padding: 20px;
+  border-radius: 8px;
+  grid-column: 2;
+}
+
+section#ficha img.foto
+{
+  width: 200px;
+  border-radius: 50%; 
+  border: 5px solid var(--fundo-card); /*borda interna*/
+  outline: 5px solid var(--destaque); /*borda externa*/
+
+  aspect-ratio: 1/1; /*quadradinho 1 por 1 */
+  object-fit: cover; /*usado para cobrir o que eu nao sei kkkk*/
+  overflow: hidden; /*para esconder o que sobrar para fora da img*/
+
+  display: block;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+section#ficha h1
+  {
+    color: var(--destaque);
+  margin: 15px 0px;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+div#social
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+div#social a
+{
+  color: var(--destaque);
+  transition: all 0.3s ease;
+}
+
+div#social a:hover
+{
+  color: var(--destaque-inverso);
+  transform: translateY(-5px) scale(1.5);
+  /*usamos aqui o "translateY(-5px)" para quando passar o mouse ele se levantar 5 px negativos(para cima) e o scale(1.5) para ele crescer seu tamanho original em uma vez e meia(1.5)*/
 }
