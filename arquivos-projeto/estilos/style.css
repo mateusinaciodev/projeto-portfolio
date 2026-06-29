@@ -68,9 +68,9 @@ main
 
 section#ficha
 {
-  background-color: var(--fundo-card);
+  background-color: var(--fundo-card);  
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 10px;
   grid-column: 2;
 }
 
@@ -91,8 +91,8 @@ section#ficha img.foto
 }
 
 section#ficha h1
-  {
-    color: var(--destaque);
+{
+  color: var(--destaque);
   margin: 15px 0px;
   font-size: 1.8em;
   text-align: center;
@@ -112,11 +112,48 @@ div#social a
 {
   color: var(--destaque);
   transition: all 0.3s ease;
-}
+} 
 
 div#social a:hover
 {
   color: var(--destaque-inverso);
   transform: translateY(-5px) scale(1.5);
   /*usamos aqui o "translateY(-5px)" para quando passar o mouse ele se levantar 5 px negativos(para cima) e o scale(1.5) para ele crescer seu tamanho original em uma vez e meia(1.5)*/
+}
+
+section#detalhes
+{
+  grid-column: 2;
+}
+
+article
+{
+  background-color: var(--fundo-card);
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+article h2
+{
+  color: var(--destaque);
+  margin-bottom: 20px;
+}
+
+.video-container
+{
+  position: relative;
+  width: 100%;
+  margin: auto;
+  aspect-ratio: 16/9;
+}
+
+.video-container iframe
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
