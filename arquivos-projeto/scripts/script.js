@@ -1,13 +1,9 @@
+// ===== Alternar tema claro/escuro =====
 const botao = document.getElementById('botao-tema');
 const body = document.body;
 
-// Persistência do tema
-const temasalvo = localStorage.getItem('tema');
-temaEscuro(temasalvo === 'escuro');
-
-// Função para alternar entre tema claro e escuro
-function temaEscuro(tipo) {
-  if (tipo == true) {
+function temaEscuro(ativar) {
+  if (ativar) {
     body.classList.add('escuro');
     botao.innerHTML = '<i class="fa-solid fa-sun"></i>';
   } else {
@@ -16,21 +12,30 @@ function temaEscuro(tipo) {
   }
 }
 
+// Persistência do tema (lê o que foi salvo antes de o usuário clicar)
+const temaSalvo = localStorage.getItem('tema');
+temaEscuro(temaSalvo === 'escuro');
+
 botao.addEventListener('click', () => {
-  const isescuro = body.classList.toggle('escuro');
-  temaEscuro(isescuro);
-  localStorage.setItem('tema', isescuro ? 'escuro' : 'claro');
+  const ativarEscuro = !body.classList.contains('escuro');
+  temaEscuro(ativarEscuro);
+  localStorage.setItem('tema', ativarEscuro ? 'escuro' : 'claro');
 });
 
-// Scroll suave para links de navegação
+// ===== Scroll suave para links de navegação =====
 const navLinks = document.querySelectorAll('#menu ul a.link');
+
 navLinks.forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
+  link.addEventListener('click', function (e) {
+    const destino = this.getAttribute('href');
+    const target = document.querySelector(destino);
+
     if (target) {
-      const headerHeight = document.querySelector('header').offsetHeight;
-      const targetPosition = target.offsetTop - headerHeight - 20;
+      e.preventDefault();
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
+
       window.scrollTo({
         top: targetPosition,
         behavior: 'smooth'

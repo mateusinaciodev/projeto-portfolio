@@ -1,30 +1,37 @@
 @charset "UTF-8";
 
-* /*reset css geral*/
+*, *::before, *::after /*reset css geral*/
 {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 
+html
+{
+  scroll-behavior: smooth;
+}
+
 :root /*modo normal*/
 {
   --fundo-principal: #f5f5f5;
   --texto: #000000;
-  --texto-inverso: #ffffff; 
+  --texto-inverso: #ffffff;
   --destaque: #0077ff;
   --destaque-inverso: #66bbff;
   --fundo-card: #ffffff;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 body.escuro /*modo escuro*/
 {
-  --fundo-principal: #222222;
+  --fundo-principal: #1a1a1a;
   --texto: #e0e0e0;
-  --texto-inverso: #333333; 
+  --texto-inverso: #333333;
   --destaque: #ff5522;
   --destaque-inverso: #a73917;
-  --fundo-card: #444444;
+  --fundo-card: #2a2a2a;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 body
@@ -36,6 +43,32 @@ body
   transition: background-color 0.6s, color 0.6s;
 }
 
+/* Link de acessibilidade, visível apenas ao navegar por teclado */
+.skip-link
+{
+  position: absolute;
+  left: -999px;
+  top: auto;
+  background: var(--destaque);
+  color: var(--texto-inverso);
+  padding: 10px 15px;
+  border-radius: 0 0 8px 0;
+  z-index: 10;
+}
+
+.skip-link:focus
+{
+  left: 0;
+  top: 0;
+}
+
+a:focus-visible,
+button:focus-visible
+{
+  outline: 3px solid var(--destaque-inverso);
+  outline-offset: 2px;
+}
+
 header
 {
   background-color: var(--destaque);
@@ -44,10 +77,11 @@ header
   display: flex;
   justify-content: flex-end;
   align-content: center;
-  position: sticky; 
+  position: sticky;
   top: 0;
   /*para os itens do menu principal ficarem grudados acima, usa-se "position: sticky;" e "top: 0;"*/
-  z-index: 1;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 nav#menu ul
@@ -57,60 +91,74 @@ nav#menu ul
   gap: 10px;
 }
 
-nav#menu a
+nav#menu a,
+nav#menu button
 {
   text-decoration: none;
   color: var(--texto-inverso);
   font-weight: 600;
   padding: 12px 15px;
   border-radius: 10px;
-  transition: background-color 0.5s, color 0.5s;
+  border: none;
+  background: none;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-nav#menu a:hover
+nav#menu a:hover,
+nav#menu button:hover
 {
   background-color: var(--destaque-inverso);
   color: var(--destaque);
-} 
+}
 
-main  
+main
 {
   display: grid;
   grid-template-columns: auto 90vw auto;
   gap: 20px;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 section#ficha
 {
-  background-color: var(--fundo-card);  
-  padding: 20px;
-  border-radius: 10px;
+  background-color: var(--fundo-card);
+  padding: 25px;
+  border-radius: 14px;
   grid-column: 2;
+  box-shadow: var(--sombra);
 }
 
 section#ficha img.foto
 {
-  width: 200px;
-  border-radius: 50%; 
+  width: 180px;
+  border-radius: 50%;
   border: 5px solid var(--fundo-card); /*borda interna*/
-  outline: 5px solid var(--destaque); /*borda externa*/
+  outline: 4px solid var(--destaque); /*borda externa*/
 
   aspect-ratio: 1/1; /*quadradinho 1 por 1 */
-  object-fit: cover; /*usado para cobrir o que eu nao sei kkkk*/
+  object-fit: cover; /*recorta a imagem para cobrir todo o espaço sem distorcer*/
   overflow: hidden; /*para esconder o que sobrar para fora da img*/
 
   display: block;
   margin: auto;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 section#ficha h1
 {
   color: var(--destaque);
-  margin: 15px 0px;
+  margin: 10px 0px 15px;
   font-size: 1.8em;
   text-align: center;
+}
+
+section#ficha p
+{
+  text-align: justify;
+  font-size: 0.95em;
 }
 
 div#social
@@ -120,20 +168,20 @@ div#social
   align-items: center;
   font-size: 1.3em;
   gap: 20px;
-  margin-top: 15px;
+  margin-top: 18px;
 }
 
 div#social a
 {
   color: var(--destaque);
   transition: all 0.3s ease;
-} 
+}
 
 div#social a:hover
 {
   color: var(--destaque-inverso);
-  transform: translateY(-5px) scale(1.5);
-  /*usamos aqui o "translateY(-5px)" para quando passar o mouse ele se levantar 5 px negativos(para cima) e o scale(1.5) para ele crescer seu tamanho original em uma vez e meia(1.5)*/
+  transform: translateY(-5px) scale(1.4);
+  /*"translateY(-5px)" levanta o ícone ao passar o mouse e "scale(1.4)" aumenta seu tamanho*/
 }
 
 section#detalhes
@@ -144,15 +192,17 @@ section#detalhes
 article
 {
   background-color: var(--fundo-card);
-  padding: 20px;
-  margin-bottom: 10px;
-  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  box-shadow: var(--sombra);
 }
 
 article h2
 {
   color: var(--destaque);
   margin-bottom: 20px;
+  font-size: 1.4em;
 }
 
 .video-container
@@ -177,7 +227,7 @@ article h2
 {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
+  gap: 24px;
 }
 
 #skill-container .info
@@ -185,6 +235,7 @@ article h2
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 8px;
 }
 
 #skill-container .nome
@@ -205,6 +256,7 @@ article h2
   height: 8px;
   background-color: var(--fundo-principal);
   border-radius: 4px;
+  overflow: hidden;
 }
 
 #skill-container .progresso
@@ -212,13 +264,14 @@ article h2
   height: 100%;
   background-color: var(--destaque-inverso);
   border-radius: 4px;
+  transition: width 0.6s ease;
 }
 
 #formacao-container
 {
   display: flex;
   flex-direction: column-reverse;
-  gap: 20px;
+  gap: 18px;
 }
 
 #formacao-container .curso
@@ -226,14 +279,14 @@ article h2
   background-color: var(--fundo-principal);
   border-left: 5px solid var(--destaque-inverso);
   border-radius: 10px;
-  padding-left: 15px;
-  transition: border-width 0.1s, border-color 0.4s;
+  padding: 12px 15px;
+  transition: border-width 0.2s, border-color 0.3s, transform 0.2s;
 }
 
 #formacao-container .curso:hover
 {
   border-left-width: 10px;
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   border-bottom: 5px solid var(--destaque);
   border-left: 5px solid var(--destaque);
   cursor: pointer;
@@ -264,17 +317,16 @@ article h2
   flex-direction: column;
   gap: 15px;
   background-color: var(--fundo-principal);
-  padding: 10px;
+  padding: 15px;
   border-left: 5px solid var(--destaque-inverso);
   border-radius: 10px;
-  padding-left: 15px;
-  transition: border-width 0.2s, border-color 0.4s;
+  transition: border-width 0.2s, border-color 0.3s, transform 0.2s;
 }
 
 #projeto-container .projeto:hover
 {
   border-left-width: 10px;
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   border-bottom: 5px solid var(--destaque);
   border-left: 5px solid var(--destaque);
   cursor: pointer;
@@ -287,6 +339,20 @@ article h2
   object-fit: cover;
   overflow: hidden;
   border-radius: 10px;
+}
+
+#projeto-container .titulo
+{
+  color: var(--destaque);
+  margin: 4px 0;
+}
+
+#projeto-container summary
+{
+  cursor: pointer;
+  color: var(--destaque-inverso);
+  font-weight: 600;
+  margin-top: 6px;
 }
 
 footer
@@ -321,7 +387,7 @@ footer a:hover
     grid-column: 2 / 3;
     height: fit-content;
     position: sticky;
-    top: 65px;
+    top: 85px;
   }
 
   section#detalhes
@@ -338,6 +404,7 @@ footer a:hover
   {
     flex-direction: row-reverse;
     justify-content: space-between;
+    align-items: center;
   }
 
   #projeto-container .projeto-info
@@ -350,5 +417,6 @@ footer a:hover
     aspect-ratio: 1/1;
     max-width: 20%;
     max-height: 200px;
+    flex-shrink: 0;
   }
 }

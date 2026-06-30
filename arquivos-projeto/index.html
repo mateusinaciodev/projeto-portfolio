@@ -3,44 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Mateus Inácio, estudante de Engenharia de Software, com projetos de HTML, CSS e desenvolvimento web.">
+    <meta name="theme-color" content="#0077ff">
     <title>Portfólio do Mateus Inácio</title>
     <link rel="stylesheet" href="estilos/style.css">
-    <link rel="shortcut icon" href="favicon.svg" type="image/svg">
-    <!--alterar o nome do icon.svg p/ icon.xml abrirá código-fonte do icon e você pode congiurar seu layout -->
-    <script src="https://kit.fontawesome.com/f9c5ea0a29.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+    <!--alterar o nome do icon.svg p/ icon.xml abrirá código-fonte do icon e você pode configurar seu layout -->
+    <script src="https://kit.fontawesome.com/f9c5ea0a29.js" crossorigin="anonymous" defer></script>
 </head>
 <body>
+    <a href="#detalhes" class="skip-link">Pular para o conteúdo</a>
     <header>
-        <nav id="menu">
+        <nav id="menu" aria-label="Menu principal">
             <ul>
-                <li><a href="#video" class="link"><i class="fa-solid fa-house"></i></a></li>
-                <li><a href="#skills" class="link"><i class="fa-solid fa-brain"></i></a></li>
-                <li><a href="#formacao" class="link"><i class="fa-solid fa-graduation-cap"></i></a></li>
-                <li><a href="#projetos" class="link"><i class="fa-solid fa-trowel-bricks"></i></a></li>
-                <li><a href="#" class="link" id="botao-tema"><i class="fa-solid fa-moon"></i></a></li>
+                <li><a href="#video" class="link" aria-label="Início"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="#skills" class="link" aria-label="Skills"><i class="fa-solid fa-brain"></i></a></li>
+                <li><a href="#formacao" class="link" aria-label="Formação"><i class="fa-solid fa-graduation-cap"></i></a></li>
+                <li><a href="#projetos" class="link" aria-label="Projetos"><i class="fa-solid fa-trowel-bricks"></i></a></li>
+                <li><button type="button" class="link" id="botao-tema" aria-label="Alternar tema claro/escuro"><i class="fa-solid fa-moon"></i></button></li>
             </ul>
-            <!--para simplificar a declaração, usa-se "ul>li*5>a isso cria um ul com 5 listas dentro e cada lista com um link de âncora"-->
         </nav>
     </header>
     <main>
         <section id="ficha">
-            <img src="imagens/foto mateus.jpg" alt="uma foto minha sorrindo" class="foto">
+            <img src="imagens/foto-mateus.jpg" alt="Foto de Mateus Inácio sorrindo" class="foto">
             <h1>Mateus Inácio</h1>
             <p>
-            Sou Mateus Inácio, estudante de Engenharia de Software na Faculdade Uniguaçu e técnico formado em Programação de Sistemas pelo SENAC. Tenho experiência prática no desenvolvimento web com Python, PHP e HTML/CSS/JS, incluindo um sistema de gestão para barbearias como projeto de conclusão. Estou em transição para a área de T.I. trazendo comigo atenção a detalhes e raciocínio analítico desenvolvidos ao longo de anos em ambientes industriais.
+            Sou Mateus Inácio, estudante de Engenharia de Software na Faculdade Uniguaçu e técnico formado em Programação de Sistemas pelo SENAC. Tenho experiência prática no desenvolvimento web com Python, PHP e HTML/CSS/JS, incluindo um sistema de gestão para barbearias como projeto de conclusão. Estou em transição para a área de T.I., trazendo comigo atenção a detalhes e raciocínio analítico desenvolvidos ao longo de anos em ambientes industriais.
             </p>
             <div id="social">
-                <a href="https://www.github.com/mateusinaciodev" target="_blank" rel="nofollow"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.instagram.com/mateusinacio46" target="_blank" rel="nofollow"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.youtube.com/@mateusinacio46" target="_blank" rel="nofollow"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://www.linkedin.com/in/mateus-in%C3%A1cio-935855339/" target="_blank" rel="nofollow"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.github.com/mateusinaciodev" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/mateusinacio46" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@mateusinacio46" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/in/mateus-in%C3%A1cio-935855339/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
         </section>
         <section id="detalhes">
             <article id="video">
-                <h2>Um video de apresentação...<i class="fa-solid fa-handshake"></i></h2>
+                <h2>Um vídeo de apresentação... <i class="fa-solid fa-handshake"></i></h2>
                 <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Uhmq6gmLpGQ?si=NjiLNtkIOo3VIajq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Uhmq6gmLpGQ?si=NjiLNtkIOo3VIajq" title="YouTube video player" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </article><!--fim article video-->
 
@@ -49,81 +51,45 @@
                 <div id="skill-container">
                     <div class="item">
                         <div class="info">
-                            <span class="nome">
-                                <i class="fa-solid fa-code"></i> HTML5
-                            </span>
-                            <span class="percent">
-                                60%
-                            </span>
+                            <span class="nome"><i class="fa-solid fa-code"></i> HTML5</span>
+                            <span class="percent">60%</span>
                         </div>
-                        <div class="barra">
-                            <div class="progresso" style="width: 60%;"></div>
-                        </div>
+                        <div class="barra"><div class="progresso" style="width: 60%;"></div></div>
                     </div>
                     <div class="item">
                         <div class="info">
-                            <span class="nome">
-                                <i class="fa-solid fa-code"></i> CSS3
-                            </span>
-                            <span class="percent">
-                                60%
-                            </span>
+                            <span class="nome"><i class="fa-solid fa-code"></i> CSS3</span>
+                            <span class="percent">60%</span>
                         </div>
-                        <div class="barra">
-                            <div class="progresso" style="width: 60%;"></div>
-                        </div>
+                        <div class="barra"><div class="progresso" style="width: 60%;"></div></div>
                     </div>
                     <div class="item">
                         <div class="info">
-                            <span class="nome">
-                                <i class="fa-solid fa-code"></i> JavaScript
-                            </span>
-                            <span class="percent">
-                                20%
-                            </span>
+                            <span class="nome"><i class="fa-solid fa-code"></i> JavaScript</span>
+                            <span class="percent">20%</span>
                         </div>
-                        <div class="barra">
-                            <div class="progresso" style="width: 20%;"></div>
-                        </div>
+                        <div class="barra"><div class="progresso" style="width: 20%;"></div></div>
                     </div>
                     <div class="item">
                         <div class="info">
-                            <span class="nome">
-                                <i class="fa-solid fa-person-rays"></i> Comunicação
-                            </span>
-                            <span class="percent">
-                                80%
-                            </span>
+                            <span class="nome"><i class="fa-solid fa-person-rays"></i> Comunicação</span>
+                            <span class="percent">80%</span>
                         </div>
-                        <div class="barra">
-                            <div class="progresso" style="width: 80%;"></div>
-                        </div>
+                        <div class="barra"><div class="progresso" style="width: 80%;"></div></div>
                     </div>
                     <div class="item">
                         <div class="info">
-                            <span class="nome">
-                                <i class="fa-solid fa-person-rays"></i> Trabalho em Equipe
-                            </span>
-                            <span class="percent">
-                                80%
-                            </span>
+                            <span class="nome"><i class="fa-solid fa-person-rays"></i> Trabalho em Equipe</span>
+                            <span class="percent">80%</span>
                         </div>
-                        <div class="barra">
-                            <div class="progresso" style="width: 80%;"></div>
-                        </div>
+                        <div class="barra"><div class="progresso" style="width: 80%;"></div></div>
                     </div>
                     <div class="item">
                         <div class="info">
-                            <span class="nome">
-                                <i class="fa-solid fa-person-rays"></i> Adaptabilidade
-                            </span>
-                            <span class="percent">
-                                90%
-                            </span>
+                            <span class="nome"><i class="fa-solid fa-person-rays"></i> Adaptabilidade</span>
+                            <span class="percent">90%</span>
                         </div>
-                        <div class="barra">
-                            <div class="progresso" style="width: 90%;"></div>
-                        </div>
+                        <div class="barra"><div class="progresso" style="width: 90%;"></div></div>
                     </div>
                 </div>
             </article><!--fim article skills-->
@@ -148,57 +114,58 @@
                     </div>
                     <div class="curso">
                         <p class="periodo">2026 - Em Andamento</p>
-                        <h3 class="instituicao">Faculade Uniguaçu</h3>
+                        <h3 class="instituicao">Faculdade Uniguaçu</h3>
                         <p class="titulo">Engenharia de Software</p>
                     </div>
                 </div>
             </article><!--fim article formacao-->
+
             <article id="projetos">
                 <h2>Meus Projetos <i class="fa-solid fa-trowel-bricks"></i></h2>
                 <div id="projeto-container">
-                    <div class="projeto"> <!--comeco projeto 01-->
-                        <img src="imagens/projeto-01-videos.jpg" alt="Imagem do primeiro projeto do curso" class="foto">
-                        <div class="info">
+                    <div class="projeto">
+                        <img src="imagens/projeto-01-videos.jpg" alt="Imagem do primeiro projeto do curso" class="foto" loading="lazy">
+                        <div class="projeto-info">
                             <p class="periodo">2026</p>
-                             <h3 class="titulo">Projetos de HTML e CSS</h3>
-                            <p>Projeto feito para aprender as regras do HTML5 e CSS3</p>
-                            <details classe="descricao">
+                            <h3 class="titulo">Projetos de HTML e CSS</h3>
+                            <p>Projeto feito para aprender as regras do HTML5 e CSS3.</p>
+                            <details class="descricao">
                                 <summary>Saiba mais...</summary>
                                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis voluptas, corrupti ratione autem eos dignissimos iste error ut repudiandae et numquam iure iusto, expedita odit facere ullam obcaecati, sit unde.</p>
                             </details>
                         </div>
-                    </div><!--fim projeto 01-->
-                    <div class="projeto"> <!--comeco projeto 02-->
-                        <img src="imagens/projeto-02-cordel.jpg" alt="Imagem do segundo projeto do curso" class="foto">
-                        <div class="info">
+                    </div>
+                    <div class="projeto">
+                        <img src="imagens/projeto-02-cordel.jpg" alt="Imagem do segundo projeto do curso" class="foto" loading="lazy">
+                        <div class="projeto-info">
                             <p class="periodo">2026</p>
-                             <h3 class="titulo">Projetos de HTML e CSS</h3>
-                            <p>Projeto feito para aprender efeito paralax em imagens.</p>
-                            <details classe="descricao">
+                            <h3 class="titulo">Projetos de HTML e CSS</h3>
+                            <p>Projeto feito para aprender efeito parallax em imagens.</p>
+                            <details class="descricao">
                                 <summary>Saiba mais...</summary>
                                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis voluptas, corrupti ratione autem eos dignissimos iste error ut repudiandae et numquam iure iusto, expedita odit facere ullam obcaecati, sit unde.</p>
                             </details>
                         </div>
-                    </div><!--fim projeto 02-->
-                    <div class="projeto"> <!--comeco projeto 03-->
-                        <img src="imagens/projeto-03-android.jpg" alt="Imagem do terceiro projeto do curso" class="foto">
-                        <div class="info">
+                    </div>
+                    <div class="projeto">
+                        <img src="imagens/projeto-03-android.jpg" alt="Imagem do terceiro projeto do curso" class="foto" loading="lazy">
+                        <div class="projeto-info">
                             <p class="periodo">2026</p>
-                             <h3 class="titulo">Projetos de HTML e CSS</h3>
+                            <h3 class="titulo">Projetos de HTML e CSS</h3>
                             <p>Projeto feito para aprender a usar conteúdos e imagens dinâmicas.</p>
-                            <details classe="descricao">
+                            <details class="descricao">
                                 <summary>Saiba mais...</summary>
                                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis voluptas, corrupti ratione autem eos dignissimos iste error ut repudiandae et numquam iure iusto, expedita odit facere ullam obcaecati, sit unde.</p>
                             </details>
                         </div>
-                    </div><!--fim projeto 03-->
+                    </div>
                 </div>
             </article><!--fim article projetos-->
         </section>
     </main>
     <footer>
-        Porfólio desenvolvido por <a href="https://www.github.com/mateusinaciodev" target="_blank" rel="nofollow">Mateus Inácio</a> seguindo as orientações e aprendizados disponibilizados no <a href="https://www.cursoemvideo.com/" target="_blank" rel="nofollow">Curso em Vídeo</a> em 2026.
+        Portfólio desenvolvido por <a href="https://www.github.com/mateusinaciodev" target="_blank" rel="noopener noreferrer">Mateus Inácio</a> seguindo as orientações e aprendizados disponibilizados no <a href="https://www.cursoemvideo.com/" target="_blank" rel="noopener noreferrer">Curso em Vídeo</a> em 2026.
     </footer>
-    <script src="scripts/script.js"></script>
+    <script src="scripts/script.js" defer></script>
 </body>
 </html>
